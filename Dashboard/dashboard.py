@@ -72,6 +72,7 @@ TUKEY_FILE = os.path.join(
 # =====================================================
 
 MAP_FILES = {
+
     "Map1": os.path.join(
         PROJECT_FOLDER,
         "Map1_3D_map.csv"
@@ -81,6 +82,7 @@ MAP_FILES = {
         PROJECT_FOLDER,
         "Map2_3D_map.csv"
     )
+
 }
 
 
@@ -89,6 +91,7 @@ MAP_FILES = {
 # =====================================================
 
 ROAD_FILES = {
+
     "Map1": os.path.join(
         PROJECT_FOLDER,
         "road_map1.kml"
@@ -98,6 +101,26 @@ ROAD_FILES = {
         PROJECT_FOLDER,
         "road_map2.kml"
     )
+
+}
+
+
+# =====================================================
+# BOUNDARY FILES
+# =====================================================
+
+BOUNDARY_FILES = {
+
+    "Map1": os.path.join(
+        PROJECT_FOLDER,
+        "boundary_map1.kml"
+    ),
+
+    "Map2": os.path.join(
+        PROJECT_FOLDER,
+        "boundary_map2.kml"
+    )
+
 }
 
 
@@ -106,6 +129,7 @@ ROAD_FILES = {
 # =====================================================
 
 ALGORITHM_OUTPUT_FOLDERS = {
+
     "ACO": os.path.join(
         OUTPUT_FOLDER,
         "ACO_3D"
@@ -120,6 +144,7 @@ ALGORITHM_OUTPUT_FOLDERS = {
         OUTPUT_FOLDER,
         "NSGAII_3D"
     )
+
 }
 
 
@@ -127,9 +152,7 @@ ALGORITHM_OUTPUT_FOLDERS = {
 # LOAD ANALYSIS DATA
 # =====================================================
 
-if not os.path.exists(
-    DATA_FILE
-):
+if not os.path.exists(DATA_FILE):
 
     st.error(
         "analysis_data1.csv could not be found."
@@ -185,9 +208,7 @@ else:
 # LOAD TREE MAP
 # =====================================================
 
-def load_tree_map(
-    map_name
-):
+def load_tree_map(map_name):
 
     map_file = MAP_FILES.get(
         map_name
@@ -220,23 +241,31 @@ def get_latest_20_files(
     ):
         return []
 
+
     files = [
+
         file
+
         for file in os.listdir(
             folder
         )
+
         if file.lower().endswith(
             extension.lower()
         )
+
     ]
+
 
     # Timestamp filenames sort chronologically
     files.sort()
+
 
     # Keep latest 20 files only
     files = files[
         -20:
     ]
+
 
     return files
 
@@ -257,11 +286,13 @@ def get_map_run_file(
         extension
     )
 
+
     if len(files) < 20:
         return None
 
 
     # Latest 20 files:
+    #
     # File 1-10  = Map1 Run1-Run10
     # File 11-20 = Map2 Run1-Run10
 
@@ -271,11 +302,13 @@ def get_map_run_file(
             0:10
         ]
 
+
     elif map_name == "Map2":
 
         map_files = files[
             10:20
         ]
+
 
     else:
 
@@ -321,6 +354,7 @@ def get_kml_file(
         )
     )
 
+
     if algorithm_folder is None:
         return None
 
@@ -355,6 +389,7 @@ def get_metric_file(
         )
     )
 
+
     if algorithm_folder is None:
         return None
 
@@ -383,6 +418,7 @@ def parse_coordinates(
 
     points = []
 
+
     if not coordinate_text:
         return points
 
@@ -390,6 +426,7 @@ def parse_coordinates(
     coordinate_text = (
         coordinate_text.strip()
     )
+
 
     items = (
         coordinate_text.split()
@@ -401,6 +438,7 @@ def parse_coordinates(
         parts = item.split(
             ","
         )
+
 
         if len(parts) >= 2:
 
@@ -510,10 +548,7 @@ def extract_placemark_coordinates_by_name(
             == target_name
         ):
 
-            if (
-                coordinates_text
-                is None
-            ):
+            if coordinates_text is None:
 
                 return []
 
@@ -527,66 +562,57 @@ def extract_placemark_coordinates_by_name(
 
 
 # =====================================================
-# EXTRACT PLANTATION BOUNDARY
+# EXTRACT FIXED BOUNDARY FROM KML
 # =====================================================
 
-def extract_plantation_boundary(
-    kml_file
+def extract_boundary_from_kml(
+    boundary_file
 ):
 
-    tree = ET.parse(
-        kml_file
-    )
-
-    root = tree.getroot()
+    if boundary_file is None:
+        return []
 
 
-    for folder in root.iter():
-
-        if (
-            folder.tag.split("}")[-1]
-            != "Folder"
-        ):
-
-            continue
+    if not os.path.exists(
+        boundary_file
+    ):
+        return []
 
 
-        folder_name = None
+    try:
+
+        tree = ET.parse(
+            boundary_file
+        )
+
+        root = tree.getroot()
 
 
-        for child in folder:
+        # =============================================
+        # FIRST TRY POLYGON
+        # =============================================
+
+        for element in root.iter():
 
             if (
-                child.tag.split("}")[-1]
-                == "name"
+                element.tag.split("}")[-1]
+                != "Polygon"
             ):
-
-                if child.text:
-
-                    folder_name = (
-                        child.text.strip()
-                    )
-
-                break
+                continue
 
 
-        if (
-            folder_name
-            == "Plantation Boundary"
-        ):
-
-            for element in folder.iter():
+            for child in element.iter():
 
                 if (
-                    element.tag.split("}")[-1]
+                    child.tag.split("}")[-1]
                     == "coordinates"
                 ):
 
-                    if element.text:
+                    if child.text:
 
                         points = (
                             parse_coordinates(
-                                element.text
+                                child.text
                             )
                         )
 
@@ -596,11 +622,50 @@ def extract_plantation_boundary(
                             return points
 
 
+        # =============================================
+        # FALLBACK TO LINESTRING
+        # =============================================
+
+        for element in root.iter():
+
+            if (
+                element.tag.split("}")[-1]
+                != "LineString"
+            ):
+                continue
+
+
+            for child in element.iter():
+
+                if (
+                    child.tag.split("}")[-1]
+                    == "coordinates"
+                ):
+
+                    if child.text:
+
+                        points = (
+                            parse_coordinates(
+                                child.text
+                            )
+                        )
+
+
+                        if points:
+
+                            return points
+
+
+    except ET.ParseError:
+
+        return []
+
+
     return []
 
 
 # =====================================================
-# EXTRACT ROAD FROM ROAD KML
+# EXTRACT FIXED ROAD FROM KML
 # =====================================================
 
 def extract_road_from_kml(
@@ -629,7 +694,7 @@ def extract_road_from_kml(
         root = tree.getroot()
 
 
-        # Find every LineString in the road KML
+        # Find every LineString
         for element in root.iter():
 
             if (
@@ -696,7 +761,7 @@ def extract_cluster_route(
 
 
 # =====================================================
-# GET ALL PLACEMARK NAMES
+# GET ALL KML PLACEMARK NAMES
 # =====================================================
 
 def get_placemark_names(
@@ -922,8 +987,13 @@ road_file = ROAD_FILES.get(
 )
 
 
+boundary_file = BOUNDARY_FILES.get(
+    selected_map
+)
+
+
 # =====================================================
-# GET MAP FEATURES
+# GET FIXED MAP FEATURES
 # =====================================================
 
 plantation_boundary = []
@@ -932,26 +1002,26 @@ road_paths = []
 
 
 # =====================================================
-# PLANTATION BOUNDARY FROM ROUTE KML
+# FIXED BOUNDARY
 # =====================================================
 
 if (
-    kml_file is not None
+    boundary_file is not None
     and
     os.path.exists(
-        kml_file
+        boundary_file
     )
 ):
 
     plantation_boundary = (
-        extract_plantation_boundary(
-            kml_file
+        extract_boundary_from_kml(
+            boundary_file
         )
     )
 
 
 # =====================================================
-# FIXED ROAD FROM ROAD KML
+# FIXED ROAD
 # =====================================================
 
 if (
@@ -1052,10 +1122,8 @@ if tree_data is not None:
     }
 
 
-    if (
-        required_columns.issubset(
-            tree_data.columns
-        )
+    if required_columns.issubset(
+        tree_data.columns
     ):
 
         center_lat = (
@@ -1177,13 +1245,11 @@ if tree_data is not None:
                     lat,
                     lon
                 )
-
                 for (
                     lat,
                     lon,
                     alt
                 )
-
                 in plantation_boundary
             ]
 
@@ -1214,7 +1280,7 @@ if tree_data is not None:
 
 
         # =============================================
-        # FIXED PLANTATION ROAD
+        # PLANTATION ROAD
         # =============================================
 
         if road_paths:
@@ -1234,13 +1300,11 @@ if tree_data is not None:
                         lat,
                         lon
                     )
-
                     for (
                         lat,
                         lon,
                         alt
                     )
-
                     in road_path
                 ]
 
@@ -1340,7 +1404,7 @@ if tree_data is not None:
 
 
         # =============================================
-        # MAP CONTROLS
+        # LAYER CONTROL
         # =============================================
 
         folium.LayerControl(
@@ -1351,7 +1415,7 @@ if tree_data is not None:
 
 
         # =============================================
-        # PLANTATION LEGEND
+        # LEGEND
         # =============================================
 
         plantation_legend = """
@@ -1466,6 +1530,14 @@ if tree_data is not None:
         )
 
 
+        if not plantation_boundary:
+
+            st.warning(
+                f"No boundary was found in "
+                f"{os.path.basename(boundary_file)}."
+            )
+
+
         if not road_paths:
 
             st.warning(
@@ -1510,10 +1582,8 @@ if (
     )
 ):
 
-    metric_data = (
-        pd.read_csv(
-            metric_file
-        )
+    metric_data = pd.read_csv(
+        metric_file
     )
 
 
@@ -1530,11 +1600,9 @@ if (
 
     if not cluster_metric.empty:
 
-        row = (
-            cluster_metric.iloc[
-                0
-            ]
-        )
+        row = cluster_metric.iloc[
+            0
+        ]
 
 
         trees = int(
@@ -1663,13 +1731,11 @@ if (
                 lat,
                 lon
             )
-
             for (
                 lat,
                 lon,
                 alt
             )
-
             in route_points
         ]
 
@@ -1677,17 +1743,13 @@ if (
         start_lat = (
             route_points[
                 0
-            ][
-                0
-            ]
+            ][0]
         )
 
         start_lon = (
             route_points[
                 0
-            ][
-                1
-            ]
+            ][1]
         )
 
 
@@ -1739,7 +1801,7 @@ if (
 
 
         # =============================================
-        # PLANTATION BOUNDARY
+        # BOUNDARY
         # =============================================
 
         if plantation_boundary:
@@ -1749,13 +1811,11 @@ if (
                     lat,
                     lon
                 )
-
                 for (
                     lat,
                     lon,
                     alt
                 )
-
                 in plantation_boundary
             ]
 
@@ -1786,7 +1846,7 @@ if (
 
 
         # =============================================
-        # FIXED PLANTATION ROAD
+        # ROAD
         # =============================================
 
         if road_paths:
@@ -1806,13 +1866,11 @@ if (
                         lat,
                         lon
                     )
-
                     for (
                         lat,
                         lon,
                         alt
                     )
-
                     in road_path
                 ]
 
@@ -1972,7 +2030,7 @@ if (
 
 
         # =============================================
-        # MAP CONTROLS
+        # MAP CONTROL
         # =============================================
 
         folium.LayerControl(
