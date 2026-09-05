@@ -1,0 +1,10 @@
+========== FINAL RESULT ==========
+
+Total Trees      : 1054
+Total Clusters   : 15
+Total Distance   : 2313163.97
+Total Turning    : 2479.65
+Total Elevation  : 406.91
+Total Cost       : 2338774.3260
+
+----------------------------------

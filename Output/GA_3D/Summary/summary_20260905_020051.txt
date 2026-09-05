@@ -1,0 +1,9 @@
+GA 3D RESULT
+
+Map: Map1
+Run: 4
+
+Clusters: 15
+Total Distance: 30485.926
+Total Elevation: 10.062
+Total Turning: 988.114

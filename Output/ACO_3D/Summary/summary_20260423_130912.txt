@@ -1,0 +1,3 @@
+Distance: 2319300.93
+Turning: 2515.64
+Elevation: 406.68

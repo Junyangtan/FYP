@@ -1,0 +1,93 @@
+========== FINAL RESULT ==========
+
+Total Trees      : 1058
+Total Clusters   : 14
+Total Distance   : 3195554.05
+Total Turning    : 749.79
+Total Elevation  : 458.08
+Total Cost       : 3195554.0548
+
+----------------------------------
+Cluster 1
+Trees      : 80
+Distance   : 212495.10
+Turning    : 41.92
+Elevation  : 32.81
+----------------------------------
+Cluster 2
+Trees      : 88
+Distance   : 305571.50
+Turning    : 75.10
+Elevation  : 32.58
+----------------------------------
+Cluster 3
+Trees      : 69
+Distance   : 244040.83
+Turning    : 31.74
+Elevation  : 32.67
+----------------------------------
+Cluster 4
+Trees      : 70
+Distance   : 238763.39
+Turning    : 49.86
+Elevation  : 32.44
+----------------------------------
+Cluster 5
+Trees      : 76
+Distance   : 158175.22
+Turning    : 82.52
+Elevation  : 32.98
+----------------------------------
+Cluster 6
+Trees      : 88
+Distance   : 275408.31
+Turning    : 73.75
+Elevation  : 32.58
+----------------------------------
+Cluster 7
+Trees      : 70
+Distance   : 187876.01
+Turning    : 45.84
+Elevation  : 33.01
+----------------------------------
+Cluster 8
+Trees      : 73
+Distance   : 198202.06
+Turning    : 62.00
+Elevation  : 32.68
+----------------------------------
+Cluster 9
+Trees      : 68
+Distance   : 255881.56
+Turning    : 33.01
+Elevation  : 32.52
+----------------------------------
+Cluster 10
+Trees      : 83
+Distance   : 223620.98
+Turning    : 73.96
+Elevation  : 33.14
+----------------------------------
+Cluster 11
+Trees      : 81
+Distance   : 240557.84
+Turning    : 42.39
+Elevation  : 32.82
+----------------------------------
+Cluster 12
+Trees      : 72
+Distance   : 201372.18
+Turning    : 45.95
+Elevation  : 32.56
+----------------------------------
+Cluster 13
+Trees      : 60
+Distance   : 225199.55
+Turning    : 34.99
+Elevation  : 32.37
+----------------------------------
+Cluster 14
+Trees      : 80
+Distance   : 228389.52
+Turning    : 56.76
+Elevation  : 32.92

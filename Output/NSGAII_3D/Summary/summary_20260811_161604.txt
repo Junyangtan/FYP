@@ -1,0 +1,99 @@
+========== FINAL RESULT ==========
+
+Total Trees      : 1058
+Total Clusters   : 15
+Total Distance   : 3130454.95
+Total Turning    : 732.27
+Total Elevation  : 490.18
+Total Cost       : 3130454.9547
+
+----------------------------------
+Cluster 1
+Trees      : 66
+Distance   : 131820.21
+Turning    : 43.75
+Elevation  : 32.77
+----------------------------------
+Cluster 2
+Trees      : 70
+Distance   : 189983.19
+Turning    : 57.51
+Elevation  : 32.69
+----------------------------------
+Cluster 3
+Trees      : 67
+Distance   : 209610.47
+Turning    : 57.00
+Elevation  : 32.76
+----------------------------------
+Cluster 4
+Trees      : 75
+Distance   : 223135.10
+Turning    : 48.16
+Elevation  : 32.83
+----------------------------------
+Cluster 5
+Trees      : 72
+Distance   : 198016.49
+Turning    : 62.46
+Elevation  : 32.84
+----------------------------------
+Cluster 6
+Trees      : 74
+Distance   : 201660.86
+Turning    : 42.87
+Elevation  : 32.72
+----------------------------------
+Cluster 7
+Trees      : 65
+Distance   : 189582.02
+Turning    : 44.51
+Elevation  : 32.48
+----------------------------------
+Cluster 8
+Trees      : 59
+Distance   : 224805.44
+Turning    : 38.36
+Elevation  : 32.49
+----------------------------------
+Cluster 9
+Trees      : 71
+Distance   : 248572.52
+Turning    : 47.84
+Elevation  : 32.44
+----------------------------------
+Cluster 10
+Trees      : 63
+Distance   : 231440.85
+Turning    : 45.02
+Elevation  : 32.64
+----------------------------------
+Cluster 11
+Trees      : 77
+Distance   : 229962.34
+Turning    : 48.95
+Elevation  : 32.39
+----------------------------------
+Cluster 12
+Trees      : 81
+Distance   : 201601.84
+Turning    : 59.22
+Elevation  : 33.01
+----------------------------------
+Cluster 13
+Trees      : 74
+Distance   : 217261.12
+Turning    : 48.89
+Elevation  : 32.80
+----------------------------------
+Cluster 14
+Trees      : 67
+Distance   : 219515.46
+Turning    : 36.74
+Elevation  : 32.44
+----------------------------------
+Cluster 15
+Trees      : 77
+Distance   : 213487.04
+Turning    : 51.01
+Elevation  : 32.88

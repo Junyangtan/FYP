@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+
+        <LookAt>
+        <longitude>101.63743242821704</longitude>
+        <latitude>2.702572595692251</latitude>
+        <range>300</range>
+        <tilt>45</tilt>
+        </LookAt>
+        
+        <Placemark>
+        <name>Base</name>
+        <Point>
+        <coordinates>
+        101.633375,2.70425,0
+        </coordinates>
+        </Point>
+        </Placemark>
+        <Folder><name>2D Routes</name>

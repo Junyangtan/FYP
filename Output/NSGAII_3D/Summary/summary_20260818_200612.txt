@@ -1,0 +1,210 @@
+========== FINAL RESULT ==========
+
+Algorithm        : NSGAII_3D_v5
+Road Offset      : 5.00 m
+Median Tree Gap  : 17.69 m
+
+Total Trees      : 1058
+Total Clusters   : 16
+Total Distance   : 30934.89 m
+Total Turning    : 862.87 rad
+Total Elevation  : 6.05 m
+Total Cost       : 10.3746
+Access Distance  : 1523.65 m (NOT counted in Total Distance)
+
+DISTANCE DEFINITION:
+Total/cluster Distance includes ONLY the first oil palm to the last oil palm inside each cluster.
+Road-base access legs and the original drone take-off point are excluded.
+
+Cluster 1
+  Trees          : 60
+  Distance       : 1855.01 m
+  Turning        : 45.39 rad
+  Elevation      : 0.21 m
+  Start Base     : B0
+  End Base       : B1
+  Start Tree     : 1040
+  End Tree       : 675
+  Start Access   : 16.55 m (excluded)
+  End Access     : 9.48 m (excluded)
+----------------------------------
+Cluster 2
+  Trees          : 75
+  Distance       : 2524.37 m
+  Turning        : 46.51 rad
+  Elevation      : 0.39 m
+  Start Base     : B1
+  End Base       : B2
+  Start Tree     : 630
+  End Tree       : 269
+  Start Access   : 16.18 m (excluded)
+  End Access     : 51.11 m (excluded)
+----------------------------------
+Cluster 3
+  Trees          : 65
+  Distance       : 1547.03 m
+  Turning        : 56.95 rad
+  Elevation      : 0.24 m
+  Start Base     : B2
+  End Base       : B3
+  Start Tree     : 151
+  End Tree       : 4
+  Start Access   : 52.02 m (excluded)
+  End Access     : 9.21 m (excluded)
+----------------------------------
+Cluster 4
+  Trees          : 68
+  Distance       : 2012.70 m
+  Turning        : 59.40 rad
+  Elevation      : 0.42 m
+  Start Base     : B3
+  End Base       : B4
+  Start Tree     : 279
+  End Tree       : 324
+  Start Access   : 120.10 m (excluded)
+  End Access     : 129.91 m (excluded)
+----------------------------------
+Cluster 5
+  Trees          : 67
+  Distance       : 2181.03 m
+  Turning        : 50.16 rad
+  Elevation      : 0.41 m
+  Start Base     : B4
+  End Base       : B5
+  Start Tree     : 8
+  End Tree       : 13
+  Start Access   : 7.52 m (excluded)
+  End Access     : 7.69 m (excluded)
+----------------------------------
+Cluster 6
+  Trees          : 63
+  Distance       : 2157.12 m
+  Turning        : 39.12 rad
+  Elevation      : 0.33 m
+  Start Base     : B5
+  End Base       : B6
+  Start Tree     : 286
+  End Tree       : 288
+  Start Access   : 115.05 m (excluded)
+  End Access     : 115.99 m (excluded)
+----------------------------------
+Cluster 7
+  Trees          : 61
+  Distance       : 1931.12 m
+  Turning        : 38.33 rad
+  Elevation      : 0.30 m
+  Start Base     : B6
+  End Base       : B7
+  Start Tree     : 17
+  End Tree       : 21
+  Start Access   : 8.64 m (excluded)
+  End Access     : 7.29 m (excluded)
+----------------------------------
+Cluster 8
+  Trees          : 72
+  Distance       : 2277.12 m
+  Turning        : 55.63 rad
+  Elevation      : 0.32 m
+  Start Base     : B7
+  End Base       : B8
+  Start Tree     : 337
+  End Tree       : 341
+  Start Access   : 130.24 m (excluded)
+  End Access     : 130.38 m (excluded)
+----------------------------------
+Cluster 9
+  Trees          : 62
+  Distance       : 1512.18 m
+  Turning        : 56.09 rad
+  Elevation      : 0.29 m
+  Start Base     : B8
+  End Base       : B9
+  Start Tree     : 25
+  End Tree       : 29
+  Start Access   : 5.02 m (excluded)
+  End Access     : 58.31 m (excluded)
+----------------------------------
+Cluster 10
+  Trees          : 60
+  Distance       : 1460.15 m
+  Turning        : 60.50 rad
+  Elevation      : 0.46 m
+  Start Base     : B9
+  End Base       : B10
+  Start Tree     : 67
+  End Tree       : 150
+  Start Access   : 62.29 m (excluded)
+  End Access     : 13.40 m (excluded)
+----------------------------------
+Cluster 11
+  Trees          : 69
+  Distance       : 1769.42 m
+  Turning        : 57.80 rad
+  Elevation      : 0.94 m
+  Start Base     : B10
+  End Base       : B11
+  Start Tree     : 353
+  End Tree       : 720
+  Start Access   : 65.88 m (excluded)
+  End Access     : 68.61 m (excluded)
+----------------------------------
+Cluster 12
+  Trees          : 59
+  Distance       : 1399.54 m
+  Turning        : 60.84 rad
+  Elevation      : 0.75 m
+  Start Base     : B11
+  End Base       : B12
+  Start Tree     : 902
+  End Tree       : 1051
+  Start Access   : 9.09 m (excluded)
+  End Access     : 19.37 m (excluded)
+----------------------------------
+Cluster 13
+  Trees          : 79
+  Distance       : 2258.21 m
+  Turning        : 80.16 rad
+  Elevation      : 0.25 m
+  Start Base     : B12
+  End Base       : B13
+  Start Tree     : 1030
+  End Tree       : 1025
+  Start Access   : 32.98 m (excluded)
+  End Access     : 26.70 m (excluded)
+----------------------------------
+Cluster 14
+  Trees          : 64
+  Distance       : 2409.62 m
+  Turning        : 38.23 rad
+  Elevation      : 0.21 m
+  Start Base     : B13
+  End Base       : B14
+  Start Tree     : 1024
+  End Tree       : 1017
+  Start Access   : 20.06 m (excluded)
+  End Access     : 53.99 m (excluded)
+----------------------------------
+Cluster 15
+  Trees          : 67
+  Distance       : 2011.10 m
+  Turning        : 54.37 rad
+  Elevation      : 0.30 m
+  Start Base     : B14
+  End Base       : B15
+  Start Tree     : 1016
+  End Tree       : 1009
+  Start Access   : 44.68 m (excluded)
+  End Access     : 25.74 m (excluded)
+----------------------------------
+Cluster 16
+  Trees          : 67
+  Distance       : 1629.17 m
+  Turning        : 63.39 rad
+  Elevation      : 0.24 m
+  Start Base     : B15
+  End Base       : B0
+  Start Tree     : 1008
+  End Tree       : 1043
+  Start Access   : 20.40 m (excluded)
+  End Access     : 69.79 m (excluded)
+----------------------------------

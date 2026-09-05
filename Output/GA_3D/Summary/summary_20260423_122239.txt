@@ -1,0 +1,3 @@
+Total Distance: 2998472.5780774797
+Total Turning: 1559.2496445554839
+Total Elevation: 433.3560056000838

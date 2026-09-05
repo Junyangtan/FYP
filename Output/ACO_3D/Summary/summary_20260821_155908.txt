@@ -1,0 +1,146 @@
+========== ACO RESULT ==========
+
+Algorithm : ACO_3D_v3
+Map : Map1
+Trees : 1058
+Clusters : 16
+
+Total Distance : 21508.272 m
+Total Turning : 1722.600 rad
+Total Elevation : 6.831 m
+
+Objective:
+Distance + 10*Turning + 2*Elevation
+
+Distance definition:
+Only tree-to-tree coverage distance counted.
+Road/base access is excluded.
+
+Cluster 1
+Trees : 67
+Distance : 1419.905 m
+Turning : 106.676
+Elevation : 0.364 m
+Start Tree : 1043
+End Tree : 682
+
+Cluster 2
+Trees : 60
+Distance : 1215.625 m
+Turning : 95.818
+Elevation : 0.289 m
+Start Tree : 675
+End Tree : 678
+
+Cluster 3
+Trees : 75
+Distance : 1575.989 m
+Turning : 118.304
+Elevation : 0.398 m
+Start Tree : 269
+End Tree : 316
+
+Cluster 4
+Trees : 65
+Distance : 1325.665 m
+Turning : 100.582
+Elevation : 0.292 m
+Start Tree : 4
+End Tree : 6
+
+Cluster 5
+Trees : 68
+Distance : 1315.569 m
+Turning : 117.093
+Elevation : 0.363 m
+Start Tree : 279
+End Tree : 324
+
+Cluster 6
+Trees : 67
+Distance : 1333.085 m
+Turning : 115.664
+Elevation : 0.342 m
+Start Tree : 13
+End Tree : 14
+
+Cluster 7
+Trees : 63
+Distance : 1339.517 m
+Turning : 96.209
+Elevation : 0.354 m
+Start Tree : 288
+End Tree : 380
+
+Cluster 8
+Trees : 61
+Distance : 1266.651 m
+Turning : 94.036
+Elevation : 0.352 m
+Start Tree : 21
+End Tree : 59
+
+Cluster 9
+Trees : 72
+Distance : 1428.982 m
+Turning : 121.094
+Elevation : 0.367 m
+Start Tree : 341
+End Tree : 389
+
+Cluster 10
+Trees : 62
+Distance : 1261.328 m
+Turning : 99.331
+Elevation : 0.352 m
+Start Tree : 29
+End Tree : 181
+
+Cluster 11
+Trees : 60
+Distance : 1128.564 m
+Turning : 104.801
+Elevation : 0.489 m
+Start Tree : 150
+End Tree : 308
+
+Cluster 12
+Trees : 69
+Distance : 1514.318 m
+Turning : 103.457
+Elevation : 1.159 m
+Start Tree : 720
+End Tree : 714
+
+Cluster 13
+Trees : 59
+Distance : 1111.274 m
+Turning : 102.227
+Elevation : 0.760 m
+Start Tree : 1051
+End Tree : 1031
+
+Cluster 14
+Trees : 79
+Distance : 1631.268 m
+Turning : 131.259
+Elevation : 0.325 m
+Start Tree : 1025
+End Tree : 888
+
+Cluster 15
+Trees : 64
+Distance : 1275.771 m
+Turning : 104.068
+Elevation : 0.252 m
+Start Tree : 1017
+End Tree : 971
+
+Cluster 16
+Trees : 67
+Distance : 1364.760 m
+Turning : 111.978
+Elevation : 0.371 m
+Start Tree : 1009
+End Tree : 963
+

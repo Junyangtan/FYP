@@ -1,0 +1,227 @@
+========== FINAL RESULT ==========
+
+Algorithm        : ACO_3D_v2
+Road Offset      : 5.00 m
+Median Tree Gap  : 17.69 m
+ACO Weights      : Distance=1.0, Turning=10.0, Elevation=2.0
+
+Total Trees      : 1058
+Total Clusters   : 16
+Total Distance   : 20992.85 m
+Total Turning    : 1757.58 rad
+Total Elevation  : 6.69 m
+Total ACO Cost   : 38582.0701
+Access Distance  : 1523.65 m (NOT counted in Total Distance or ACO Cost)
+
+DISTANCE DEFINITION:
+Total/cluster Distance includes ONLY the first oil palm to the last oil palm inside each cluster.
+Road-base access legs and the original drone take-off point are excluded.
+
+Cluster 1
+  Trees          : 60
+  Distance       : 1189.66 m
+  Turning        : 95.37 rad
+  Elevation      : 0.30 m
+  ACO Cost       : 2143.9830
+  Start Base     : B0
+  End Base       : B1
+  Start Tree     : 1040
+  End Tree       : 675
+  Start Access   : 16.55 m (excluded)
+  End Access     : 9.48 m (excluded)
+----------------------------------
+Cluster 2
+  Trees          : 75
+  Distance       : 1444.20 m
+  Turning        : 132.05 rad
+  Elevation      : 0.43 m
+  ACO Cost       : 2765.5486
+  Start Base     : B1
+  End Base       : B2
+  Start Tree     : 630
+  End Tree       : 269
+  Start Access   : 16.18 m (excluded)
+  End Access     : 51.11 m (excluded)
+----------------------------------
+Cluster 3
+  Trees          : 65
+  Distance       : 1237.96 m
+  Turning        : 112.44 rad
+  Elevation      : 0.31 m
+  ACO Cost       : 2362.9533
+  Start Base     : B2
+  End Base       : B3
+  Start Tree     : 151
+  End Tree       : 4
+  Start Access   : 52.02 m (excluded)
+  End Access     : 9.21 m (excluded)
+----------------------------------
+Cluster 4
+  Trees          : 68
+  Distance       : 1370.06 m
+  Turning        : 106.25 rad
+  Elevation      : 0.37 m
+  ACO Cost       : 2433.2488
+  Start Base     : B3
+  End Base       : B4
+  Start Tree     : 279
+  End Tree       : 324
+  Start Access   : 120.10 m (excluded)
+  End Access     : 129.91 m (excluded)
+----------------------------------
+Cluster 5
+  Trees          : 67
+  Distance       : 1342.31 m
+  Turning        : 110.34 rad
+  Elevation      : 0.35 m
+  ACO Cost       : 2446.3692
+  Start Base     : B4
+  End Base       : B5
+  Start Tree     : 8
+  End Tree       : 13
+  Start Access   : 7.52 m (excluded)
+  End Access     : 7.69 m (excluded)
+----------------------------------
+Cluster 6
+  Trees          : 63
+  Distance       : 1215.34 m
+  Turning        : 104.79 rad
+  Elevation      : 0.25 m
+  ACO Cost       : 2263.7499
+  Start Base     : B5
+  End Base       : B6
+  Start Tree     : 286
+  End Tree       : 288
+  Start Access   : 115.05 m (excluded)
+  End Access     : 115.99 m (excluded)
+----------------------------------
+Cluster 7
+  Trees          : 61
+  Distance       : 1174.33 m
+  Turning        : 104.32 rad
+  Elevation      : 0.34 m
+  ACO Cost       : 2218.1675
+  Start Base     : B6
+  End Base       : B7
+  Start Tree     : 17
+  End Tree       : 21
+  Start Access   : 8.64 m (excluded)
+  End Access     : 7.29 m (excluded)
+----------------------------------
+Cluster 8
+  Trees          : 72
+  Distance       : 1443.13 m
+  Turning        : 121.32 rad
+  Elevation      : 0.40 m
+  ACO Cost       : 2657.0967
+  Start Base     : B7
+  End Base       : B8
+  Start Tree     : 337
+  End Tree       : 341
+  Start Access   : 130.24 m (excluded)
+  End Access     : 130.38 m (excluded)
+----------------------------------
+Cluster 9
+  Trees          : 62
+  Distance       : 1193.08 m
+  Turning        : 106.28 rad
+  Elevation      : 0.29 m
+  ACO Cost       : 2256.4641
+  Start Base     : B8
+  End Base       : B9
+  Start Tree     : 25
+  End Tree       : 29
+  Start Access   : 5.02 m (excluded)
+  End Access     : 58.31 m (excluded)
+----------------------------------
+Cluster 10
+  Trees          : 60
+  Distance       : 1152.54 m
+  Turning        : 103.53 rad
+  Elevation      : 0.49 m
+  ACO Cost       : 2188.8734
+  Start Base     : B9
+  End Base       : B10
+  Start Tree     : 67
+  End Tree       : 150
+  Start Access   : 62.29 m (excluded)
+  End Access     : 13.40 m (excluded)
+----------------------------------
+Cluster 11
+  Trees          : 69
+  Distance       : 1358.36 m
+  Turning        : 115.29 rad
+  Elevation      : 1.01 m
+  ACO Cost       : 2513.2397
+  Start Base     : B10
+  End Base       : B11
+  Start Tree     : 353
+  End Tree       : 720
+  Start Access   : 65.88 m (excluded)
+  End Access     : 68.61 m (excluded)
+----------------------------------
+Cluster 12
+  Trees          : 59
+  Distance       : 1132.33 m
+  Turning        : 95.16 rad
+  Elevation      : 0.81 m
+  ACO Cost       : 2085.5902
+  Start Base     : B11
+  End Base       : B12
+  Start Tree     : 902
+  End Tree       : 1051
+  Start Access   : 9.09 m (excluded)
+  End Access     : 19.37 m (excluded)
+----------------------------------
+Cluster 13
+  Trees          : 79
+  Distance       : 1681.97 m
+  Turning        : 129.58 rad
+  Elevation      : 0.39 m
+  ACO Cost       : 2978.5055
+  Start Base     : B12
+  End Base       : B13
+  Start Tree     : 1030
+  End Tree       : 1025
+  Start Access   : 32.98 m (excluded)
+  End Access     : 26.70 m (excluded)
+----------------------------------
+Cluster 14
+  Trees          : 64
+  Distance       : 1360.84 m
+  Turning        : 97.99 rad
+  Elevation      : 0.25 m
+  ACO Cost       : 2341.2647
+  Start Base     : B13
+  End Base       : B14
+  Start Tree     : 1024
+  End Tree       : 1017
+  Start Access   : 20.06 m (excluded)
+  End Access     : 53.99 m (excluded)
+----------------------------------
+Cluster 15
+  Trees          : 67
+  Distance       : 1332.21 m
+  Turning        : 111.54 rad
+  Elevation      : 0.35 m
+  ACO Cost       : 2448.2760
+  Start Base     : B14
+  End Base       : B15
+  Start Tree     : 1016
+  End Tree       : 1009
+  Start Access   : 44.68 m (excluded)
+  End Access     : 25.74 m (excluded)
+----------------------------------
+Cluster 16
+  Trees          : 67
+  Distance       : 1364.54 m
+  Turning        : 111.35 rad
+  Elevation      : 0.37 m
+  ACO Cost       : 2478.7394
+  Start Base     : B15
+  End Base       : B0
+  Start Tree     : 1008
+  End Tree       : 1043
+  Start Access   : 20.40 m (excluded)
+  End Access     : 69.79 m (excluded)
+----------------------------------
