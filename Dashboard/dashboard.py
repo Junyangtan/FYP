@@ -85,6 +85,23 @@ MAP_FILES = {
 
 
 # =====================================================
+# ROAD FILES
+# =====================================================
+
+ROAD_FILES = {
+    "Map1": os.path.join(
+        PROJECT_FOLDER,
+        "road_map1.kml"
+    ),
+
+    "Map2": os.path.join(
+        PROJECT_FOLDER,
+        "road_map2.kml"
+    )
+}
+
+
+# =====================================================
 # ALGORITHM OUTPUT FOLDERS
 # =====================================================
 
@@ -583,68 +600,58 @@ def extract_plantation_boundary(
 
 
 # =====================================================
-# EXTRACT GENERATED ROAD
+# EXTRACT ROAD FROM ROAD KML
 # =====================================================
 
-def extract_generated_road(
-    kml_file
+def extract_road_from_kml(
+    road_file
 ):
-
-    tree = ET.parse(
-        kml_file
-    )
-
-    root = tree.getroot()
 
     road_paths = []
 
 
-    for folder in root.iter():
-
-        if (
-            folder.tag.split("}")[-1]
-            != "Folder"
-        ):
-
-            continue
+    if road_file is None:
+        return road_paths
 
 
-        folder_name = None
+    if not os.path.exists(
+        road_file
+    ):
+        return road_paths
 
 
-        for child in folder:
+    try:
+
+        tree = ET.parse(
+            road_file
+        )
+
+        root = tree.getroot()
+
+
+        # Find every LineString in the road KML
+        for element in root.iter():
 
             if (
-                child.tag.split("}")[-1]
-                == "name"
+                element.tag.split("}")[-1]
+                != "LineString"
             ):
 
-                if child.text:
-
-                    folder_name = (
-                        child.text.strip()
-                    )
-
-                break
+                continue
 
 
-        if (
-            folder_name
-            == "Generated Road"
-        ):
-
-            for element in folder.iter():
+            for child in element.iter():
 
                 if (
-                    element.tag.split("}")[-1]
+                    child.tag.split("}")[-1]
                     == "coordinates"
                 ):
 
-                    if element.text:
+                    if child.text:
 
                         points = (
                             parse_coordinates(
-                                element.text
+                                child.text
                             )
                         )
 
@@ -656,7 +663,9 @@ def extract_generated_road(
                             )
 
 
-            break
+    except ET.ParseError:
+
+        return []
 
 
     return road_paths
@@ -891,7 +900,7 @@ selected_cluster = (
 
 
 # =====================================================
-# GET SELECTED KML AND METRIC FILE
+# GET SELECTED FILES
 # =====================================================
 
 kml_file = get_kml_file(
@@ -908,14 +917,23 @@ metric_file = get_metric_file(
 )
 
 
+road_file = ROAD_FILES.get(
+    selected_map
+)
+
+
 # =====================================================
-# GET KML MAP FEATURES
+# GET MAP FEATURES
 # =====================================================
 
 plantation_boundary = []
 
-generated_road = []
+road_paths = []
 
+
+# =====================================================
+# PLANTATION BOUNDARY FROM ROUTE KML
+# =====================================================
 
 if (
     kml_file is not None
@@ -932,9 +950,21 @@ if (
     )
 
 
-    generated_road = (
-        extract_generated_road(
-            kml_file
+# =====================================================
+# FIXED ROAD FROM ROAD KML
+# =====================================================
+
+if (
+    road_file is not None
+    and
+    os.path.exists(
+        road_file
+    )
+):
+
+    road_paths = (
+        extract_road_from_kml(
+            road_file
         )
     )
 
@@ -1184,20 +1214,20 @@ if tree_data is not None:
 
 
         # =============================================
-        # GENERATED ROAD
+        # FIXED PLANTATION ROAD
         # =============================================
 
-        if generated_road:
+        if road_paths:
 
             road_layer = (
                 folium.FeatureGroup(
-                    name="Generated Road",
+                    name="Plantation Road",
                     show=True
                 )
             )
 
 
-            for road_path in generated_road:
+            for road_path in road_paths:
 
                 road_2d = [
                     (
@@ -1215,15 +1245,17 @@ if tree_data is not None:
                 ]
 
 
-                folium.PolyLine(
-                    locations=road_2d,
-                    color="orange",
-                    weight=5,
-                    opacity=1.0,
-                    tooltip="Generated Road"
-                ).add_to(
-                    road_layer
-                )
+                if len(road_2d) >= 2:
+
+                    folium.PolyLine(
+                        locations=road_2d,
+                        color="orange",
+                        weight=5,
+                        opacity=1.0,
+                        tooltip="Plantation Road"
+                    ).add_to(
+                        road_layer
+                    )
 
 
             road_layer.add_to(
@@ -1401,7 +1433,7 @@ if tree_data is not None:
                 ">
                 </span>
 
-                Generated Road
+                Plantation Road
 
             </div>
 
@@ -1432,6 +1464,14 @@ if tree_data is not None:
             f"{selected_map}: "
             f"{len(tree_data)}"
         )
+
+
+        if not road_paths:
+
+            st.warning(
+                f"No road LineString was found in "
+                f"{os.path.basename(road_file)}."
+            )
 
 
     else:
@@ -1623,11 +1663,13 @@ if (
                 lat,
                 lon
             )
+
             for (
                 lat,
                 lon,
                 alt
             )
+
             in route_points
         ]
 
@@ -1707,11 +1749,13 @@ if (
                     lat,
                     lon
                 )
+
                 for (
                     lat,
                     lon,
                     alt
                 )
+
                 in plantation_boundary
             ]
 
@@ -1742,44 +1786,48 @@ if (
 
 
         # =============================================
-        # GENERATED ROAD
+        # FIXED PLANTATION ROAD
         # =============================================
 
-        if generated_road:
+        if road_paths:
 
             road_layer = (
                 folium.FeatureGroup(
-                    name="Generated Road",
+                    name="Plantation Road",
                     show=True
                 )
             )
 
 
-            for road_path in generated_road:
+            for road_path in road_paths:
 
                 road_2d = [
                     (
                         lat,
                         lon
                     )
+
                     for (
                         lat,
                         lon,
                         alt
                     )
+
                     in road_path
                 ]
 
 
-                folium.PolyLine(
-                    locations=road_2d,
-                    color="orange",
-                    weight=5,
-                    opacity=1.0,
-                    tooltip="Generated Road"
-                ).add_to(
-                    road_layer
-                )
+                if len(road_2d) >= 2:
+
+                    folium.PolyLine(
+                        locations=road_2d,
+                        color="orange",
+                        weight=5,
+                        opacity=1.0,
+                        tooltip="Plantation Road"
+                    ).add_to(
+                        road_layer
+                    )
 
 
             road_layer.add_to(
@@ -1997,7 +2045,7 @@ if (
                 ">
                 </span>
 
-                Generated Road
+                Plantation Road
 
             </div>
 
