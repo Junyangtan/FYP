@@ -1,0 +1,10 @@
+Metric,Group1,Group2,Mean_Difference_Group2_minus_Group1,p_adj,Lower,Upper,Significant,Method
+Distance,ACO,GA,9.03521527482,0.968313788706,-79.8670438772,97.9374744268,False,Independent Tukey HSD: reference only; ignores matching
+Distance,ACO,NSGAII,9.47464311791,0.965213754808,-79.4276160341,98.3769022699,False,Independent Tukey HSD: reference only; ignores matching
+Distance,GA,NSGAII,0.439427843098,0.999923806778,-88.4628313089,89.3416869951,False,Independent Tukey HSD: reference only; ignores matching
+Elevation,ACO,GA,-0.00882239341989,0.971067524123,-0.0997337774226,0.0820889905828,False,Independent Tukey HSD: reference only; ignores matching
+Elevation,ACO,NSGAII,-0.0395665690549,0.556526471588,-0.130477953058,0.0513448149478,False,Independent Tukey HSD: reference only; ignores matching
+Elevation,GA,NSGAII,-0.030744175635,0.701210233464,-0.121655559638,0.0601672083677,False,Independent Tukey HSD: reference only; ignores matching
+Turning,ACO,GA,3.89104417475,0.288248454213,-2.21818655332,10.0002749028,False,Independent Tukey HSD: reference only; ignores matching
+Turning,ACO,NSGAII,3.40691020083,0.383911754486,-2.70232052725,9.51614092891,False,Independent Tukey HSD: reference only; ignores matching
+Turning,GA,NSGAII,-0.484133973923,0.980609887155,-6.593364702,5.62509675415,False,Independent Tukey HSD: reference only; ignores matching

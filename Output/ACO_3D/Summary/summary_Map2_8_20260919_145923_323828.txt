@@ -1,0 +1,9 @@
+ACO 3D RESULT
+
+Map: Map2
+Run: 8
+
+Clusters: 20
+Total Distance: 21493.004
+Total Turning: 1019.507
+Total Elevation: 11.854

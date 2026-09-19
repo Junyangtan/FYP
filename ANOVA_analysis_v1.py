@@ -11,7 +11,7 @@ from statsmodels.stats.multicomp import pairwise_tukeyhsd
 # SETTINGS
 # =====================================================
 
-INPUT_FILE = "Output/analysis_data1.csv"
+INPUT_FILE = "Output/analysis_data2.csv"
 
 OUTPUT_FOLDER = "Output/Analysis"
 

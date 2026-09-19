@@ -5,9 +5,9 @@ base_dir = os.path.dirname(__file__)
 
 
 files = [
-    f"NSGAII_3D_v6.py",
-    f"GA_3D_v3.py",
-    f"ACO_3D_v3.py"
+    f"NSGAII_3D_v7.py",
+    f"GA_3D_v4.py",
+    f"ACO_3D_v4.py"
 ]
 
 for file in files:
