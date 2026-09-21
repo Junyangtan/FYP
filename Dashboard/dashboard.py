@@ -1989,6 +1989,19 @@ else:
 # =====================================================
 
 
+def significance_label(value):
+    """Symbols use Holm-adjusted p-values and strict supervisor thresholds."""
+    if pd.isna(value) or not np.isfinite(value) or not 0 <= value <= 1:
+        return "N/A"
+    if value < 0.001:
+        return "***"
+    if value < 0.01:
+        return "**"
+    if value < 0.05:
+        return "*"
+    return "ns"
+
+
 def p_label(value):
     if pd.isna(value):
         return "Unavailable"
@@ -2144,8 +2157,9 @@ def performance_figure(desc, scope, metric, pairs=None):
             i, j = ALGORITHMS.index(row.Group1), ALGORITHMS.index(row.Group2)
             y = top + step*(level+1)
             ax.plot([i, i, j, j], [y, y+step*.15, y+step*.15, y], color="#555", lw=1)
-            ax.text((i+j)/2, y+step*.2, f"p adj = {p_label(row.p_Holm_All_Scopes)}", ha="center", fontsize=9)
+            ax.text((i+j)/2, y+step*.2, significance_label(row.p_Holm_All_Scopes), ha="center", fontsize=12, fontweight="bold")
         ax.set_ylim(top=top+step*(len(pr)+1.8))
+        fig.supxlabel("Holm-adjusted p: * p < 0.05; ** p < 0.01; *** p < 0.001; ns p ≥ 0.05", fontsize=9)
     return fig
 
 
