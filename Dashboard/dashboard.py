@@ -20,8 +20,11 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from streamlit_folium import st_folium
+from pathlib import Path
 
-st.set_page_config(page_title="Drone Path Planning Dashboard", page_icon="🚁", layout="wide")
+DRONE_ICON = Path(__file__).resolve().parent / "agricultural_drone.png"
+MONASH_ICON = Path(__file__).resolve().parent / "monash_logo.png"
+st.set_page_config(page_title="FYP Automated Path Planning", page_icon=str(MONASH_ICON), layout="wide")
 
 DASHBOARD_FOLDER = Path(__file__).resolve().parent
 PROJECT_FOLDER = Path(os.environ.get("DRONE_PROJECT_ROOT", str(DASHBOARD_FOLDER.parent)))
@@ -624,9 +627,13 @@ def get_placemark_names(
 # TITLE
 # =====================================================
 
-st.title(
-    "🚁 Automated Drone Path Planning Dashboard"
-)
+icon_col, title_col = st.columns([1, 10])
+
+with icon_col:
+    st.image(str(DRONE_ICON), width=85)
+
+with title_col:
+    st.title("Automated Drone Path Planning Dashboard")
 
 st.write(
     "Oil Palm Plantation Pesticide Spraying Route Optimization"
