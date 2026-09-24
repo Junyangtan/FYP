@@ -23,7 +23,7 @@ from streamlit_folium import st_folium
 from pathlib import Path
 
 DRONE_ICON = Path(__file__).resolve().parent / "agricultural_drone.png"
-MONASH_ICON = Path(__file__).resolve().parent / "monash_logo.png"
+MONASH_ICON = Path(__file__).resolve().parent / "monash_logo.jpeg"
 st.set_page_config(page_title="FYP Automated Path Planning", page_icon=str(MONASH_ICON), layout="wide")
 
 DASHBOARD_FOLDER = Path(__file__).resolve().parent
